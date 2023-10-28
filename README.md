@@ -71,7 +71,7 @@ A comprehensive solution that caters to businesses looking to manage their proje
 
 ## Getting Started:
 
-** with POSTGRES running on 5432 **
+**with POSTGRES running on 5432**
 From /backend/src/main/java/com/cooksys/groupfinal, run a clean Maven build, then GroupFinalApplication
 From /frontend, run 'npm install', then 'npm start'
 
