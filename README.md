@@ -1,19 +1,77 @@
-Assessment 3
-===============================
-# Overview
+# Project Management Dashboard
 
-For this assessment students will work in a group(s) to write a full stack application. This will incorporate everything we learned in the classroom. Students will be given tasks across the full stack to ensure everyone works on all pieces of the application. The application will be managed in a simulated kan ban agile style and will make use of Github issues and the project board. During the first day of the assessment students will go through the ERD and wireframe that the stakeholders had a account lead put together for you. From these each team will need to create their own endpoint documentation and add it to the wiki. Once that's done each team should meet with their lead and plan out the project by creating issues and assigning each member their first 2-3 tasks. The target for the first week is to finish version 1.0 of their application and go through a demo of progress with their lead that morning. The target for the second week is to have a functional prototype to present to the full FT team and others from Cook Systems internal staff. All teams will have a cut-off time of 12pm CT the last Thursday of class. At that point they should begin putting together their presentation and practice it with their lead a minimum of 2 times that afternoon. The final Friday all teams will present that applications.
+A comprehensive solution that caters to businesses looking to manage their projects, teams, and user accounts, seamlessly integrating frontend and backend functionalities.
 
----
+## Features:
 
-## ERD
+1. **User Management**: Handle user login, validation, creation, and modifications to profiles, credentials, and user status.
+2. **Announcements**: Allows for the addition and updating of important announcements.
+3. **Company Overview**: View all companies, their associated users, announcements, and teams, alongside project data nested under teams.
+4. **Projects**: A duplicate functionality to the company's projects, but focusing specifically on project creation, editing, and retrieval by team.
+5. **Teams**: Create, modify, and retrieve team information including its associated members.
 
-![Final ERD](https://user-images.githubusercontent.com/32781877/206259951-fe81a650-1d90-4c28-ae7a-571f649269d9.png)
+## Backend API Endpoints:
 
+### User:
+- **Login**: `POST /login`
+- **Get User**: `GET /{username}`
+- **Validate User**: `POST /validate`
+- **Create User**: `POST /new`
+- **Edit User Profile**: `PATCH /{username}/profile`
+- **Edit User Credentials**: `PATCH /{username}/credentials`
+- **Edit User Admin Status**: `PATCH /{username}/admin/{adminStatus}`
+- **Edit User Active Status**: `PATCH /{username}/active/{activeStatus}`
 
----
+### Announcements:
+- **Add Announcement**: `POST /add`
+- **Update Announcement**: `PATCH /update/{id}`
 
-## Wireframe
+### Companies:
+- **Get All Companies**: `GET /`
+- **Get Company Users**: `GET /{id}/users`
+- **Get Company Announcements**: `GET /{id}/announcements`
+- **Get Company Teams**: `GET /{id}/teams`
+- **Get All Projects by Team**: `GET /{companyId}/teams/{teamId}/projects`
+- **Add User to Company**: `POST /{id}/users/{username}`
 
-[Figma Wireframe Link](https://www.figma.com/file/n78G77ALKSYUKeOhkSdJLf/Final-Prototype-V3?node-id=0%3A1)
+### Projects:
+- **Get All Projects by Team (Duplicate)**: `GET /{companyId}/teams/{teamId}/projects/team`
+- **Add Project to Team**: `POST /{companyId}/teams/{teamId}/projects`
+- **Edit Project**: `PATCH /{companyId}/teams/{teamId}/projects/{projectId}`
+
+### Teams:
+- **Create Team**: `POST /`
+- **Edit Team by ID**: `PATCH /{teamId}`
+- **Get All Team Members**: `GET /{id}/users`
+- **Get Team Information**: `GET /{id}`
+
+### Backend Tech Stack:
+
+**Language**: Java
+**Framework**: Spring Boot
+**Database**: PostgreSQL
+
+## Frontend Features:
+
+### User Interface:
+
+- **Login & Registration**: Clean and user-friendly forms with validation feedback.
+- **Dashboard**: Overview of projects, teams, and announcements.
+- **User Profiles**: Detailed view and editing functionalities for user data.
+- **Announcements**: A dedicated section for viewing and managing announcements.
+- **Company & Teams**: Interactive lists and forms for company and team-related operations.
+- **Projects**: Visual representation of projects with capabilities to add, edit, and manage.
+
+### Frontend Tech Stack:
+
+- **Framework**: Angular
+- **Styling**: Bootstrap, CSS
+- **Development Tools**: TypeScript, HTML, CSS, VS Code
+- **State Management**: Angular Services singleton
+
+## Getting Started:
+
+** with POSTGRES running on 5432 **
+From /backend/src/main/java/com/cooksys/groupfinal, run a clean Maven build, then GroupFinalApplication
+From /frontend, run 'npm install', then 'npm start'
 
