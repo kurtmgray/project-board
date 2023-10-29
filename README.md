@@ -13,6 +13,7 @@ A comprehensive solution that caters to businesses looking to manage their proje
 ## Backend API Endpoints:
 
 ### User:
+
 - **Login**: `POST /login`
 - **Get User**: `GET /{username}`
 - **Validate User**: `POST /validate`
@@ -23,10 +24,12 @@ A comprehensive solution that caters to businesses looking to manage their proje
 - **Edit User Active Status**: `PATCH /{username}/active/{activeStatus}`
 
 ### Announcements:
+
 - **Add Announcement**: `POST /add`
 - **Update Announcement**: `PATCH /update/{id}`
 
 ### Companies:
+
 - **Get All Companies**: `GET /`
 - **Get Company Users**: `GET /{id}/users`
 - **Get Company Announcements**: `GET /{id}/announcements`
@@ -35,11 +38,13 @@ A comprehensive solution that caters to businesses looking to manage their proje
 - **Add User to Company**: `POST /{id}/users/{username}`
 
 ### Projects:
+
 - **Get All Projects by Team (Duplicate)**: `GET /{companyId}/teams/{teamId}/projects/team`
 - **Add Project to Team**: `POST /{companyId}/teams/{teamId}/projects`
 - **Edit Project**: `PATCH /{companyId}/teams/{teamId}/projects/{projectId}`
 
 ### Teams:
+
 - **Create Team**: `POST /`
 - **Edit Team by ID**: `PATCH /{teamId}`
 - **Get All Team Members**: `GET /{id}/users`
@@ -71,7 +76,18 @@ A comprehensive solution that caters to businesses looking to manage their proje
 
 ## Getting Started:
 
-**with POSTGRES running on 5432**
-From /backend/src/main/java/com/cooksys/groupfinal, run a clean Maven build, then GroupFinalApplication
-From /frontend, run 'npm install', then 'npm start'
+### Prerequisites
 
+Ensure you have the following setup:
+
+- **PostgreSQL** running on port `5432`
+  - **Username:** `postgres`
+  - **Password:** `bondstone`
+
+### Installation and Running
+
+1. Navigate to /frontend
+2. Run `npm install` to install necessary frontend dependencies
+3. Navigate to root directory
+4. Run `npm install` to install necessary root dependency
+5. Run `npm start` to run both server and frontend
